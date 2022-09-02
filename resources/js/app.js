@@ -8,7 +8,7 @@ import './bootstrap';
 
 import HeaderComponent from "./components/HeaderComponent";
 import {createApp} from "vue";
-import App from "./App.vue";
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin

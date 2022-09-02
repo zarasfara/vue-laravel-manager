@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="{{asset('public/css/app.css')}}">
     <title>laravel+vue</title>
 </head>
-<body>
+<body class="bg-slate-50">
 
-
-    @yield('content')
+@yield('content')
 
 <script type="module" src="{{asset('public/js/app.js')}}"></script>
 </body>
