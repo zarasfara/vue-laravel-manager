@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('public/css/app.css')}}">
     <title>laravel+vue</title>
 </head>
-<body class="bg-slate-100/90">
+<body class="bg-slate-100/90 h-screen">
 
 @yield('content')
 
