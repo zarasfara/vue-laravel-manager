@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("filter-more");document.getElementById("filter-switcher").addEventListener("click",(function(){e.classList.toggle("hidden"),e.classList.toggle("scale-up-center")}))}));
