@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div id="app">
-        <header-component></header-component>
+    <div>
         <div class="container mx-auto flex mt-4">
             <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2 pb-3">
                 <div class="breadcrumb-container rounded mb-4">
@@ -56,9 +55,11 @@
                                 voluptas voluptates! Debitis error et maiores molestiae veniam.
                             </div>
                         </div>
-                        <div class="projects-item__bottom">
-                            <div class="mt-3">
-                                <button class="text-emerald-500 cursor-pointer">Активные задачи - 1</button>
+                        <div id="project-task" class="mt-3">
+                            <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer">Активные задачи -
+                                1
+                            </button>
+                            <div class="projects-tasks__list hidden scale-up-hor-left">
                                 <div class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
                                     <div class="flex">
                                         <form class="mr-2" action="">
@@ -81,28 +82,48 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
-            <aside class="bg-white w-1/5 rounded-md p-2">
-                <div>
-                    <form class="flex items-center" action="" >
-                        <input class="rounded border border-gray-300 h-8 mr-3" type="text">
-                        <button class="bg-emerald-400 rounded text-white p-1 px-2 h-8 focus:bg-emerald-500" type="submit">
-                            Поиск
-                        </button>
-                    </form>
-                </div>
-                <div>
-                    <div class="text-center mt-4">
-                        <h3 class="text-lg">Комментарии</h3>
+            <aside class="w-1/4">
+                <div class="bg-white mb-12 rounded-md p-2 px-4 flex justify-center flex-col text-base">
+                    <p>Привет, <span class="font-bold" >user name</span></p>
+                    <div class="flex mt-3 w-80">
+                        <p>Сессия: Не начата</p>
+                        <form class="ml-2 flex items-center" action="">
+                            <button class="p-0.5 px-2 bg-emerald-400 text-white rounded">Начать</button>
+                        </form>
                     </div>
-                    <div class="comments-list">
-                        <div class="">
-                            <div class="text-sm comment-message">
-                                Привет с того мира
+                </div>
+                <div class="bg-white rounded-md p-2 pb-8">
+                    <div class="flex justify-center">
+                        <form class="flex items-center" action="">
+                            <input placeholder="Название задачи"
+                                   class="rounded border border-gray-300 h-8 mr-3 placeholder:text-sm" type="text">
+                            <button class="bg-emerald-400 rounded text-white p-1 px-2 h-8 focus:bg-emerald-500"
+                                    type="submit">
+                                Поиск
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="text-center mt-4">
+                            <h3 class="text-lg">Комментарии</h3>
+                        </div>
+                        <div class="comments-list mt-3">
+                            <div class="comments-item">
+                                <div class="comments-header">
+                                    <div class="text-sm comment-message mr-2 font-bold">
+                                        <span class="mr-3">Evgeniy Osipov</span>
+                                        <span class="text-gray-400 font-thin">10.23.2233</span>
+                                    </div>
+                                    <div class="text-sm mt-3 border-b border-gray-300 break-words">
+                                        <p>Can you send this over to the marketing departmentqwe qwe qwe qweqw / <a
+                                                    href="#"
+                                                    class="text-emerald-500 font-bold">task
+                                                project</a></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div></div>
                         </div>
                     </div>
                 </div>

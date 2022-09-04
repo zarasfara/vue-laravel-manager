@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use \App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', [PageController::class,'home'])->name('home');
 
-Route::get('/login', function () {
-    return view('pages.login');
+Route::prefix('login')->group(function () {
+    Route::get('/', [PageController::class,'login'])->name('login');
+    Route::post('/', [LoginController::class,'login'])->name('login');
 });

@@ -10,8 +10,12 @@
     <title>laravel+vue</title>
 </head>
 <body class="bg-slate-100/90 h-screen">
-
-@yield('content')
+<div id="app">
+    @if(!Route::is('login'))
+        <header-component></header-component>
+    @endif
+    @yield('content')
+</div>
 
 <script type="module" src="{{asset('public/js/app.js')}}"></script>
 @stack('scripts')

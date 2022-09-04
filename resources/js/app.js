@@ -6,7 +6,8 @@
 
 import './bootstrap';
 
-import HeaderComponent from "./components/HeaderComponent";
+import HeaderComponent from "./components/Header.vue";
+import Login from "./components/Login.vue";
 import {createApp} from "vue";
 
 
@@ -23,6 +24,7 @@ import {createApp} from "vue";
 
 const app = createApp({})
     .component('header-component', HeaderComponent)
+    .component('login-component', Login)
     .mount('#app')
 
 /**
