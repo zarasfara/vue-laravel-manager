@@ -17,7 +17,7 @@
                     </ol>
                 </div>
                 <div class="statuses-list flex mb-3">
-                    <div class="p-1 rounded-md flex items-center cursor-pointer border border-gray-300 relative">
+                    <div class="p-1 px-2 rounded-md flex items-center cursor-pointer border border-gray-300 relative">
                         <div id="filter-switcher" class="flex items-center">
                             <span class="mr-2 select-none">Фильтрация</span>
                             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
@@ -40,7 +40,7 @@
                 </div>
                 <hr>
                 <div class="projects-list mt-4">
-                    <div class="projects-item p-2 border-l-2 mt-4 border-gray-300 rounded-l">
+                    <div class="projects-item p-2 border-l-2 mt-8 border-gray-300 rounded-l">
                         <div class="projects-item__header flex justify-between">
                             <div class="w-3/5">
                                 <p class="font-bold">task name / <a class="text-emerald-500" href="#">Test project</a>
@@ -59,7 +59,7 @@
                         <div class="projects-item__bottom">
                             <div class="mt-3">
                                 <button class="text-emerald-500 cursor-pointer">Активные задачи - 1</button>
-                                <div class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-500 flex items-center justify-between max-h-7">
+                                <div class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
                                     <div class="flex">
                                         <form class="mr-2" action="">
                                             <input id="default-checkbox" type="checkbox" value=""
@@ -69,7 +69,7 @@
                                     </div>
                                     <form id="task-change-status" action="">
                                         <select id="underline_select"
-                                                class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-gray-500 bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                                class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                                             <option selected>Choose a country</option>
                                             <option value="US">United States</option>
                                             <option value="CA">Canada</option>
@@ -85,11 +85,26 @@
                 </div>
             </section>
             <aside class="bg-white w-1/5 rounded-md p-2">
-                <div class="text-center">
-                    <h3>Комментарии</h3>
+                <div>
+                    <form class="flex items-center" action="" >
+                        <input class="rounded border border-gray-300 h-8 mr-3" type="text">
+                        <button class="bg-emerald-400 rounded text-white p-1 px-2 h-8 focus:bg-emerald-500" type="submit">
+                            Поиск
+                        </button>
+                    </form>
                 </div>
-                <div class="comments-list">
-
+                <div>
+                    <div class="text-center mt-4">
+                        <h3 class="text-lg">Комментарии</h3>
+                    </div>
+                    <div class="comments-list">
+                        <div class="">
+                            <div class="text-sm comment-message">
+                                Привет с того мира
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
             </aside>
         </div>
