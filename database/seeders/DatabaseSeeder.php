@@ -15,18 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            RoleSeeder::class,
-        ]);
+        $this->call([RoleSeeder::class,]);
 
-         \App\Models\User::factory()
-             ->count(1)
-             ->create();
+        \App\Models\User::factory()->count(2)->create();
 
-         \App\Models\User::factory()->create([
-             'name' => 'admin',
-             'role_id' => 1,
-             'password' => bcrypt('admin123'),
-         ]);
     }
 }

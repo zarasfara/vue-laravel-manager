@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -18,9 +19,10 @@ class AuthTest extends TestCase
     public function test_login()
     {
         $password = "qwe123";
-        $user = User::factory()->create(['password' => bcrypt($password)]);
+        $user = User::factory()
+            ->create(['password' => bcrypt($password)]);
 
-        $response = $this->post(route('login'), ['email' => $user->email, 'password' => $user->password]);
+        $response = $this->post('/login', ['email' => $user->email, 'password' => $password]);
         $response->assertStatus(200);
     }
 
