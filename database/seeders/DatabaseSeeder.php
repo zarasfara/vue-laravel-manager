@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->count(2)->create();
 
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'role_id' => 1,
+            'password' => bcrypt('admin123'),
+        ]);
+
     }
 }

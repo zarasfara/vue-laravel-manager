@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-use \App\Http\Controllers\Auth\LoginController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +15,4 @@ use \App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [PageController::class,'home'])->name('home');
 
-Route::prefix('login')->group(function () {
-    Route::get('/', [PageController::class,'login'])->name('login');
-    Route::post('/', [LoginController::class,'login'])->name('login');
-});
+Route::get('/login', [PageController::class,'login'])->name('login');

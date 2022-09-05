@@ -38,7 +38,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['email', 'required'],
+            'email' => ['email', 'required','exists:users'],
             'password' => ['required', 'min:6'],
         ];
     }
@@ -46,14 +46,14 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email' => [
-                'required' => ':attribute обязателен',
-                'email' => ':attribute некорректный',
-            ],
-            'password' => [
-                'min:6' => ':attribute должен быть минимум 6 символов',
-                'required' => ':attribute обязателен',
-            ],
+
+            'email.required' => ':attribute обязателна',
+            'email.email' => ':attribute некорректный',
+            'email.exists' => 'Такого email не существует',
+
+            'password.min' => ':attribute должен быть минимум 6 символов',
+            'password.required' => ':attribute обязателен',
+
         ];
     }
 }
