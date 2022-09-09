@@ -10,7 +10,7 @@
           id="email" type="email" placeholder="email" v-model="form.email"
           :class="hasError('email') ? 'border-red-500' : ''">
 
-      <p v-if="hasError('email') ? 'border-red-500' : ''" class="text-red-500 text-xs italic">
+      <p v-if="hasError('email') ? 'border-red-500' : '' " class="text-red-500 text-xs">
         {{ getError('email') }}</p>
     </div>
     <div class="mb-6">
@@ -20,10 +20,11 @@
 
       <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="password"
           id="password" type="password" v-model="form.password"
           :class="hasError('password') ? 'border-red-500' : ''">
 
-      <p v-if="hasError('password') ? 'border-red-500' : ''" class="text-red-500 text-xs italic">
+      <p v-if="hasError('password') ? 'border-red-500' : '' " class="text-red-500 text-xs">
         {{ getError('password') }}</p>
     </div>
 
@@ -45,16 +46,20 @@ export default {
 
   data() {
     return {
-      form: {},
+      form: {
+        email: null,
+        password: null,
+      },
       error: false,
       errorMessages: []
     }
   },
   methods: {
     submit() {
-      axios.post('api/login', this.form).then(res => {
+      axios.post('api/login', this.form).then(response => {
+        console.log(response)
         this.error = false
-        this.form = {};
+        location.href='/'
       }).catch(errors => {
         this.error = true
         this.errorMessages = errors.response.data.errors

@@ -12,7 +12,7 @@
 <body class="bg-slate-100/90 h-screen">
 <div id="app">
     @if(!Route::is('login'))
-        <header-component></header-component>
+        <header-component v-bind:user="{{\Auth::user()}}"></header-component>
     @endif
     @yield('content')
 </div>

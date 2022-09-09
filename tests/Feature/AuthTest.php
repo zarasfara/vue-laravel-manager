@@ -22,7 +22,7 @@ class AuthTest extends TestCase
         $user = User::factory()
             ->create(['password' => bcrypt($password)]);
 
-        $response = $this->post('/login', ['email' => $user->email, 'password' => $password]);
+        $response = $this->post('/api/login', ['email' => $user->email, 'password' => $password]);
         $response->assertStatus(200);
     }
 

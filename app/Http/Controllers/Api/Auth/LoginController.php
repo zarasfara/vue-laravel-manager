@@ -13,9 +13,17 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return response(true);
+            return response()->json(Auth::user());
         }
 
         return response(false, 401);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()
+            ->route('login');
     }
 }

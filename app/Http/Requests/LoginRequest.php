@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
 {
-    protected $redirectRoute = 'home';
+//    protected $redirectRoute = 'home';
     /**
      * Determine if the user is authorized to make this request.
      *

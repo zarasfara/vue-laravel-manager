@@ -86,7 +86,7 @@
             </section>
             <aside class="w-1/4">
                 <div class="bg-white mb-12 rounded-md p-2 px-4 flex justify-center flex-col text-base">
-                    <p>Привет, <span class="font-bold" >user name</span></p>
+                    <p>Привет, <span class="font-bold" >{{auth()->user()->name ?? 'test'}}</span></p>
                     <div class="flex mt-3 w-80">
                         <p>Сессия: Не начата</p>
                         <form class="ml-2 flex items-center" action="">
