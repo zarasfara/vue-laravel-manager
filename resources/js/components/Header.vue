@@ -24,21 +24,30 @@
             </svg>
           </button>
         </div>
+<!--        modal end-->
         <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
           <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
             <li>
-              <a href="#"
+              <a href="/"
                  class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
-                 aria-current="page">Home</a>
+                 aria-current="page">Главная</a>
+            </li>
+            <li>
+              <a href="/users"
+                 class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                Исполнители
+              </a>
+            </li>
+            <li>
+              <a v-if="user.role_id === 1" href="/admin"
+                 class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                Панель администратора
+              </a>
             </li>
             <li v-if="user">
               <a href="api/logout"
-                 class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent text-gray-700 lg:p-0 dark:text-white"
-                 aria-current="page">logout</a>
-            </li>
-            <li>
-              <a href="#"
-                 class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+                 class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent text-gray-700 lg:p-0 dark:text-white lg:hover:text-primary-700"
+                 aria-current="page">Выход</a>
             </li>
           </ul>
         </div>
@@ -50,7 +59,9 @@
 <script>
 export default {
   name: "HeaderComponent",
-  props:['user']
+  props: {
+    user: Object
+  },
 }
 
 

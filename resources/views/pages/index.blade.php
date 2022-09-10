@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <div class="container mx-auto flex mt-4">
-            <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2 pb-3">
+            <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2">
                 <div class="breadcrumb-container rounded mb-4">
                     <ol class="list-none flex">
                         <li class="text-slate-500 breadcrumb-item">
@@ -41,12 +41,12 @@
                 <div class="projects-list mt-4">
                     <div class="projects-item p-2 border-l-2 mt-8 border-gray-300 rounded-l">
                         <div class="projects-item__header flex justify-between">
-                            <div class="w-3/5">
-                                <p class="font-bold">task name / <a class="text-emerald-500" href="#">Test project</a>
+                            <div class="w-2/5">
+                                <p class="font-bold">Название задачи / <a class="text-emerald-500" href="#">Название проекта</a>
                                 </p>
-                                <div class="task-item__description mt-1.5 flex items-center text-sm w-3/6 justify-between">
+                                <div class="task-item__description mt-1.5 flex items-center text-sm">
                                     <p class="expiration-date">выполнить до: 20.08.2002</p>
-                                    <p>Статус: Active</p>
+                                    <p class="ml-3">Статус: Active</p>
                                 </div>
                             </div>
                             <div class="w-2/5">
@@ -59,14 +59,34 @@
                             <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer">Активные задачи -
                                 1
                             </button>
-                            <div class="projects-tasks__list hidden scale-up-hor-left">
+                            <div class="projects-tasks__list hidden scale-up-hor-left h-0">
+
                                 <div class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
                                     <div class="flex">
                                         <form class="mr-2" action="">
                                             <input id="default-checkbox" type="checkbox" value=""
                                                    class="w-4 h-4 rounded border-gray-300">
                                         </form>
-                                        <p>Доделать задачу связануюю с чем то</p>
+                                        <p>Доделать задачу связаную с чем то</p>
+                                    </div>
+                                    <form id="task-change-status" action="">
+                                        <select id="underline_select"
+                                                class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                            <option selected>Choose a country</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="FR">France</option>
+                                            <option value="DE">Germany</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
+                                    <div class="flex">
+                                        <form class="mr-2" action="">
+                                            <input id="default-checkbox" type="checkbox" value=""
+                                                   class="w-4 h-4 rounded border-gray-300">
+                                        </form>
+                                        <p>Доделать задачу связаную с чем то</p>
                                     </div>
                                     <form id="task-change-status" action="">
                                         <select id="underline_select"
@@ -95,7 +115,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-md p-2 pb-8">
-                    <div class="flex justify-center">
+                    <div class="flex ">
                         <form class="flex items-center" action="">
                             <input placeholder="Название задачи"
                                    class="rounded border border-gray-300 h-8 mr-3 placeholder:text-sm" type="text">
@@ -116,7 +136,7 @@
                                         <span class="mr-3">Evgeniy Osipov</span>
                                         <span class="text-gray-400 font-thin">10.23.2233</span>
                                     </div>
-                                    <div class="text-sm mt-3 border-b border-gray-300 break-words">
+                                    <div class="text-sm mt-3 border-b border-gray-300 break-words pb-3">
                                         <p>Can you send this over to the marketing departmentqwe qwe qwe qweqw / <a
                                                     href="#"
                                                     class="text-emerald-500 font-bold">task

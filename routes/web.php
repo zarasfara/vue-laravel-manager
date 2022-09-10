@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,10 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class,'home'])->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::get('/login', [PageController::class,'login'])->name('login');
+Route::get('/login', [PageController::class, 'login'])->name('login');
+
+Route::group(['middleware' => 'access', 'prefix' => 'admin'], function () {
+    Route::get('/', [AdminPageController::class, 'home']);
+});

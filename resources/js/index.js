@@ -10,5 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     switcherActiveTask.addEventListener('click', () => {
         document.querySelector('.projects-tasks__list').classList.toggle('hidden')
+        document.querySelector('.projects-tasks__list').classList.toggle('h-0')
     })
 });
