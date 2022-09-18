@@ -24,4 +24,9 @@ class PageController extends Controller
 
         return redirect()->route('logout');
     }
+
+    public function projects()
+    {
+        return view('pages.projects');
+    }
 }

@@ -4,7 +4,7 @@
 @endphp
 
 @section('content')
-<dashboard :user="{{Auth::user()}}"></dashboard>
+<index :user="{{Auth::user()}}"></index>
 @endsection
 
 @push('scripts')

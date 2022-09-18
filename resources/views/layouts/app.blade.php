@@ -14,7 +14,7 @@
     @if(!Route::is('login'))
         <header-component :user="{{\Auth::user()}}"></header-component>
     @endif
-    @yield('content')
+        @yield('content')
 </div>
 
 <script type="module" src="{{asset('public/js/app.js')}}"></script>

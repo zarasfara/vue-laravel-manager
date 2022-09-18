@@ -6,10 +6,12 @@
 
 import './bootstrap';
 
+import {createApp} from "vue";
+
 import HeaderComponent from "./components/Header.vue";
 import Login from "./pages/Login.vue";
-import Dashboard from "./pages/Dashboard.vue";
-import {createApp} from "vue";
+import Index from "./pages/Index";
+import Projects from "./pages/Projects.vue";
 
 
 /**
@@ -18,15 +20,11 @@ import {createApp} from "vue";
  * to use in your application's views. An example is included for you.
  */
 
-
-// const app = createApp(App).mount('#app')
-
-// const app = createApp({});
-
 const app = createApp({})
     .component('header-component', HeaderComponent)
     .component('login-component', Login)
-    .component('dashboard', Dashboard)
+    .component('index', Index)
+    .component('projects', Projects)
     .mount('#app')
 
 /**

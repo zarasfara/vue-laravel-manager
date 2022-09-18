@@ -32,9 +32,13 @@
                  class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                  aria-current="page">Главная</a>
             </li>
+              <li>
+                  <a href="/projects"
+                     class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0">Проекты</a>
+              </li>
             <li>
               <a href="/users"
-                 class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0 ">
+                 class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0">
                 Исполнители
               </a>
             </li>
