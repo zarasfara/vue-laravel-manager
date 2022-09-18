@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <div class="container mx-auto flex mt-4">
-            <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2">
+            <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2 px-3 border border-gray-200">
                 <div class="breadcrumb-container rounded mb-4">
                     <ol class="list-none flex">
                         <li class="text-slate-500 breadcrumb-item">
@@ -105,7 +105,7 @@
                 </div>
             </section>
             <aside class="w-1/4">
-                <div class="bg-white mb-12 rounded-md p-2 px-4 flex justify-center flex-col text-base">
+                <div class="bg-white mb-3 rounded-md p-2 px-4 flex justify-center flex-col text-base border border-gray-200">
                     <p>Привет, <span class="font-bold" >{{auth()->user()->name ?? 'test'}}</span></p>
                     <div class="flex mt-3 w-80">
                         <p>Сессия: Не начата</p>
@@ -114,7 +114,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="bg-white rounded-md p-2 pb-8">
+                <div class="bg-white rounded-md p-2 pb-8 border border-gray-200">
                     <div class="flex ">
                         <form class="flex items-center" action="">
                             <input placeholder="Название задачи"
