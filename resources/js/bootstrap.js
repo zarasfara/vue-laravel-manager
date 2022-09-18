@@ -9,8 +9,11 @@ import 'bootstrap';
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+// const url = process.env.APP_URL ? 'http://vue-laravel-manager' : '/'
+
 import axios from 'axios';
 window.axios = axios;
+// const api = axios.create({baseURL:url})
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
