@@ -78,7 +78,10 @@
 
 <script>
 export default {
-    name: "Projects"
+    name: "Projects",
+    props: [
+        'user'
+    ]
 }
 </script>
 

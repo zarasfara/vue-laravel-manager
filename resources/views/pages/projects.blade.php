@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
+
 @section('content')
-<projects></projects>
+<projects :user="{{Auth::user()}}"></projects>
 @endsection
