@@ -1,23 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="{{asset('public/css/app.css')}}">
-    <title>laravel+vue</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <title>vue+laravel</title>
+    @inertiaHead
 </head>
-<body class="bg-slate-100/90 h-screen">
-<div id="app">
-    @if(!Route::is('login'))
-        <header-component :user="{{\Auth::user()}}"></header-component>
-    @endif
-        @yield('content')
-</div>
-
-<script type="module" src="{{asset('public/js/app.js')}}"></script>
-@stack('scripts')
+<body>
+@inertia
 </body>
+@stack('scripts')
 </html>

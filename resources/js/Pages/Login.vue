@@ -47,38 +47,38 @@
 import axios from "axios";
 
 export default {
-  name: "Login",
+    name: "Login",
 
-  data() {
-    return {
-      form: {
-        email: null,
-        password: null,
-      },
-      error: false,
-      errorMessages: []
-    }
-  },
-  methods: {
-    submit() {
-      axios.post('api/v1/login', this.form).then(response => {
-        console.log(response)
-        this.error = false
-        location.href='/'
-      }).catch(errors => {
-        this.error = true
-        this.errorMessages = errors.response.data.errors
-      })
+    data() {
+        return {
+            form: {
+                email: null,
+                password: null,
+            },
+            error: false,
+            errorMessages: []
+        }
     },
-    hasError(fieldName) {
-      return (fieldName in this.errorMessages);
-    },
-    getError(fieldName) {
-      return this.errorMessages[fieldName][0]
+    methods: {
+        submit() {
+            axios.post('api/v1/login', this.form).then(response => {
+                console.log(response)
+                this.error = false
+                location.href = '/'
+            }).catch(errors => {
+                this.error = true
+                this.errorMessages = errors.response.data.errors
+            })
+        },
+        hasError(fieldName) {
+            return (fieldName in this.errorMessages);
+        },
+        getError(fieldName) {
+            return this.errorMessages[fieldName][0]
+        }
     }
-  }
 
-  //TODO Оптимизировать код в компоненте
+    //TODO Оптимизировать код в компоненте
 }
 </script>
 

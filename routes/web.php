@@ -16,13 +16,10 @@ use App\Http\Controllers\Admin\PageController as AdminPageController;
 */
 
 
-
-
-
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'home')->name('home');
     Route::get('/login', 'login')->name('login');
-    Route::get('/projects','projects')->name('projects');
+    Route::get('/projects', 'projects')->name('projects');
 });
 
 Route::group(['middleware' => 'access', 'prefix' => 'admin'], function () {

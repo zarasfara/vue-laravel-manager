@@ -9,6 +9,6 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('pages.admin.index');
+        return inertia('Admin/Index');
     }
 }
