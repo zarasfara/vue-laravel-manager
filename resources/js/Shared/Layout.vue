@@ -1,6 +1,8 @@
 <template>
     <app-header/>
-    <slot/>
+    <div class="lg:container mx-auto flex mt-4">
+        <slot/>
+    </div>
 </template>
 
 <script>

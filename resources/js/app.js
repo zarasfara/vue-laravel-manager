@@ -9,6 +9,10 @@ import './bootstrap';
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 
+const cleanApp = () => {
+    document.getElementById('app').removeAttribute('data-page')
+}
+
 createInertiaApp({
     resolve: name => require(`./Pages/${name}`),
     setup({ el, App, props, plugin }) {
@@ -16,4 +20,6 @@ createInertiaApp({
             .use(plugin)
             .mount(el)
     },
-})
+}).then(cleanApp)
+
+document.addEventListener('inertia:finish', cleanApp)

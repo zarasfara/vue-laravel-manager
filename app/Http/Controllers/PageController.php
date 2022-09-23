@@ -28,4 +28,12 @@ class PageController extends Controller
     {
         return inertia('Projects');
     }
+
+    /**
+     * @return \Inertia\Response|\Inertia\ResponseFactory
+     */
+    public function users(): \Inertia\Response|\Inertia\ResponseFactory
+    {
+        return inertia('Users');
+    }
 }
