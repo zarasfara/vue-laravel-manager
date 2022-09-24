@@ -139,7 +139,7 @@
                                     <span class="text-gray-400 font-thin">10.23.2233</span>
                                 </div>
                                 <div class="text-sm mt-3 border-b border-gray-300 break-words pb-3">
-                                    <p>Can you send this over to the marketing department qwe qwe query / <a
+                                    <p>!!!Can you send this over to the marketing department qwe qwe query / <a
                                         href="#"
                                         class="text-emerald-500 font-bold">task
                                         project</a></p>
@@ -154,7 +154,7 @@
 </template>
 
 <script>
-import Layout from "../Shared/Layout";
+import Layout from "../Shared/Layout.vue";
 import * as index from "../index";
 export default {
     name: "Index",

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AdminLayout from "../../Shared/AdminLayout";
+import AdminLayout from "@/Shared/AdminLayout.vue";
 
 export default {
     name: "Index",

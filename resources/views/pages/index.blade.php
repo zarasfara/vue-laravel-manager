@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('app')
 @php
     use Illuminate\Support\Facades\Auth;
 @endphp
 
 @section('content')
-<index :user="{{Auth::user()}}"></index>
+    <index :user="{{Auth::user()}}"></index>
 @endsection
 
 @push('scripts')

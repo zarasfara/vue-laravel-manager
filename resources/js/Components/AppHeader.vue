@@ -29,18 +29,23 @@
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <a href="/"
-                               class="block py-2 pr-4 pl-3 text-gray-400 lg:text-primary-700 text-white rounded bg-primary-700 lg:bg-transparent lg:p-0">Главная</a>
+                            <Link href="/"
+                                  class="block py-2 pr-4 pl-3 text-gray-400 lg:text-primary-700 text-white rounded bg-primary-700 lg:bg-transparent lg:p-0">
+                                Главная
+                            </Link>
                         </li>
                         <li>
-                            <a href="/projects"
-                               class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0">Проекты</a>
+                            <Link href="/projects"
+                                  class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0">
+                                Проекты
+                            </Link>
                         </li>
                         <li>
-                            <a href="/users"
-                               class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0">
-                                Исполнители
-                            </a>
+                            <Link
+                                class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0"
+                                href="/users">
+                                Пользователи
+                            </Link>
                         </li>
                         <li>
                             <a v-if="user.role_id === 1" href="/admin"
@@ -50,7 +55,7 @@
                         </li>
                         <li v-if="user">
                             <a href="api/logout"
-                               class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent text-gray-700 lg:p-0 dark:text-white lg:hover:text-primary-700"
+                               class="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent text-gray-400 lg:p-0 lg:hover:text-primary-700"
                                aria-current="page">Выход</a>
                         </li>
                     </ul>
@@ -63,6 +68,7 @@
 <script>
 import {computed} from 'vue'
 import {usePage} from '@inertiajs/inertia-vue3'
+import {Link} from '@inertiajs/inertia-vue3'
 
 export default {
     name: "AppHeader",
@@ -70,6 +76,9 @@ export default {
         const user = computed(() => usePage().props.value.user)
         return {user}
     },
+    components: {
+        Link
+    }
 }
 
 
