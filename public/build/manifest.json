@@ -1,14 +1,14 @@
 {
-  "public/fonts/Roboto-Regular.ttf": {
-    "file": "assets/Roboto-Regular.4e147ab6.ttf",
-    "src": "public/fonts/Roboto-Regular.ttf"
-  },
   "public/fonts/Roboto-Medium.ttf": {
     "file": "assets/Roboto-Medium.9d0d55a3.ttf",
     "src": "public/fonts/Roboto-Medium.ttf"
   },
+  "public/fonts/Roboto-Regular.ttf": {
+    "file": "assets/Roboto-Regular.4e147ab6.ttf",
+    "src": "public/fonts/Roboto-Regular.ttf"
+  },
   "resources/js/app.js": {
-    "file": "assets/app.fd5f30ee.js",
+    "file": "assets/app.ec5a2a58.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -19,12 +19,17 @@
       "resources/js/Pages/Users.vue"
     ]
   },
+  "resources/js/index.js": {
+    "file": "assets/index.11fe450f.js",
+    "src": "resources/js/index.js",
+    "isEntry": true
+  },
   "resources/js/Pages/Admin/Index.vue": {
-    "file": "assets/Index.b8f0ae61.js",
+    "file": "assets/Index.82cb4d3b.js",
     "src": "resources/js/Pages/Admin/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_AppHeader.1312ec7b.js",
+      "_AppHeader.a6965d17.js",
       "__plugin-vue_export-helper.cdc0426e.js",
       "resources/js/app.js"
     ]
@@ -32,34 +37,34 @@
   "__plugin-vue_export-helper.cdc0426e.js": {
     "file": "assets/_plugin-vue_export-helper.cdc0426e.js"
   },
-  "_AppHeader.1312ec7b.js": {
-    "file": "assets/AppHeader.1312ec7b.js",
+  "_AppHeader.a6965d17.js": {
+    "file": "assets/AppHeader.a6965d17.js",
     "imports": [
       "resources/js/app.js",
       "__plugin-vue_export-helper.cdc0426e.js"
     ]
   },
   "resources/js/Pages/Index.vue": {
-    "file": "assets/Index.1fe78f1d.js",
+    "file": "assets/Index.d70e31fb.js",
     "src": "resources/js/Pages/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.e72c5d70.js",
+      "_Layout.a6b932bc.js",
       "__plugin-vue_export-helper.cdc0426e.js",
       "resources/js/app.js",
-      "_AppHeader.1312ec7b.js"
+      "_AppHeader.a6965d17.js"
     ]
   },
-  "_Layout.e72c5d70.js": {
-    "file": "assets/Layout.e72c5d70.js",
+  "_Layout.a6b932bc.js": {
+    "file": "assets/Layout.a6b932bc.js",
     "imports": [
-      "_AppHeader.1312ec7b.js",
+      "_AppHeader.a6965d17.js",
       "__plugin-vue_export-helper.cdc0426e.js",
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Login.vue": {
-    "file": "assets/Login.24a4d50d.js",
+    "file": "assets/Login.ebd09c06.js",
     "src": "resources/js/Pages/Login.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -68,25 +73,25 @@
     ]
   },
   "resources/js/Pages/Projects.vue": {
-    "file": "assets/Projects.d240941d.js",
+    "file": "assets/Projects.1d2647af.js",
     "src": "resources/js/Pages/Projects.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.e72c5d70.js",
+      "_Layout.a6b932bc.js",
       "__plugin-vue_export-helper.cdc0426e.js",
       "resources/js/app.js",
-      "_AppHeader.1312ec7b.js"
+      "_AppHeader.a6965d17.js"
     ]
   },
   "resources/js/Pages/Users.vue": {
-    "file": "assets/Users.b1b2928f.js",
+    "file": "assets/Users.bf02369b.js",
     "src": "resources/js/Pages/Users.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.e72c5d70.js",
+      "_Layout.a6b932bc.js",
       "__plugin-vue_export-helper.cdc0426e.js",
       "resources/js/app.js",
-      "_AppHeader.1312ec7b.js"
+      "_AppHeader.a6965d17.js"
     ]
   },
   "resources/css/app.css": {

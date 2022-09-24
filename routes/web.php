@@ -23,6 +23,6 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/users', 'users')->name('users');
 });
 
-Route::group(['middleware' => 'access', 'prefix' => 'admin'], function () {
-    Route::get('/', [AdminPageController::class, 'home']);
+Route::group(['middleware' => 'access', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', [AdminPageController::class, 'home'])->name('home');
 });

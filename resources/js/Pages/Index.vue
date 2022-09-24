@@ -154,8 +154,8 @@
 </template>
 
 <script>
-import Layout from "../Shared/Layout.vue";
-import * as index from "../index";
+import Layout from "@/Shared/Layout.vue";
+
 export default {
     name: "Index",
     props: {
