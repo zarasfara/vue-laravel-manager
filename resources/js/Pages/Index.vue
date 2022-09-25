@@ -14,7 +14,7 @@
             </div>
             <div class="statuses-list flex mb-3">
                 <div class="p-1 px-2 rounded-md flex items-center cursor-pointer border border-gray-300 relative">
-                    <div id="filter-switcher" class="flex items-center">
+                    <div id="filter-switcher" class="flex items-center" @click="filterSwitch()">
                         <span class="mr-2 select-none">Фильтрация</span>
                         <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
                             <path
@@ -22,7 +22,7 @@
                         </svg>
                     </div>
                     <form id="filter-more"
-                          class="bg-white rounded-md w-fit border border-gray-300 p-2 absolute top-10 w-200px hidden left-0 select-none">
+                          class="bg-white rounded-md w-fit border border-gray-300 p-2 absolute top-10 scale-up-center w-200px hidden left-0 select-none">
                         <label class="block">
                             <span class="text-gray-700">Статусы</span>
                             <select class="block mt-1 rounded cursor-pointer">
@@ -55,7 +55,8 @@
                         </div>
                     </div>
                     <div id="project-task" class="mt-3">
-                        <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer">Активные задачи -
+                        <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer"
+                                @click="switcherActiveTask">Активные задачи -
                             1
                         </button>
                         <div class="projects-tasks__list hidden scale-up-hor-left h-0">
@@ -155,11 +156,20 @@
 
 <script>
 import Layout from "@/Shared/Layout.vue";
+import methods from '@/index'
 
 export default {
     name: "Index",
     props: {
         user: Object
+    },
+    methods: {
+        filterSwitch() {
+            methods.filterSwitch()
+        },
+        switcherActiveTask() {
+            methods.switcherActiveTask()
+        }
     },
     components: {
         Layout,
