@@ -54,4 +54,15 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class,'role_id','id');
     }
+
+    /**
+     * Check if the user has a role
+     *
+     * @param $role
+     * @return bool
+     */
+    public function hasRole($role): bool
+    {
+        return $this->role->title === $role;
+    }
 }

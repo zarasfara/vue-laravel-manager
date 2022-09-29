@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
@@ -23,6 +24,13 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/users', 'users')->name('users');
 });
 
-Route::group(['middleware' => 'access', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+
+
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/logout', 'logout')->name('logout');
+    Route::post('/login', 'login')->name('login.send');
+});
+
+Route::group(['middleware' => ['access:admin', 'auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [AdminPageController::class, 'home'])->name('home');
 });

@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
@@ -19,7 +21,10 @@ class LoginController extends Controller
         return response(false, 401);
     }
 
-    public function logout()
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function logout(): RedirectResponse
     {
         Auth::logout();
 

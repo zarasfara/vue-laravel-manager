@@ -48,7 +48,6 @@ import axios from "axios";
 
 export default {
     name: "Login",
-
     data() {
         return {
             form: {
@@ -61,10 +60,9 @@ export default {
     },
     methods: {
         submit() {
-            axios.post('api/v1/login', this.form).then(response => {
-                console.log(response)
+            axios.post('/login', this.form).then(response => {
                 this.error = false
-                location.href = '/'
+                location.href = '/projects'
             }).catch(errors => {
                 this.error = true
                 this.errorMessages = errors.response.data.errors

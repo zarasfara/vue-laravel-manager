@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import AppHeader from "@/Components/AppHeader.vue";
+import AppHeader from "@/Shared/AppHeader.vue";
 export default {
     name: "AdminLayout",
     components: {
