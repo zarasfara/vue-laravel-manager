@@ -18,7 +18,7 @@ class LoginRequest extends FormRequest
     }
 
     /**
-     * Получить пользовательские имена атрибутов для формирования ошибок валидатора.
+     * Get common attribute names to form an error validator.
      *
      * @return array
      */
@@ -43,6 +43,11 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    /**
+     * Validation messages
+     *
+     * @return string[]
+     */
     public function messages()
     {
         return [
