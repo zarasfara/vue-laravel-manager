@@ -97,6 +97,7 @@
             </div>
             <div class="breadcrumbs">
                 breadcrumbs
+                <!-- TODO Сверстать пагинацию -->
             </div>
         </section>
     </Layout>

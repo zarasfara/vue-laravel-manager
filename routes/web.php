@@ -22,6 +22,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::get('/projects', 'projects')->name('projects');
     Route::get('/users', 'users')->name('users');
+    Route::get('/profile/{user}', 'userProfile')->name('user.profile');
 });
 
 

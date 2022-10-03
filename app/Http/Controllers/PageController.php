@@ -36,9 +36,18 @@ class PageController extends Controller
     public function users(): \Inertia\Response|\Inertia\ResponseFactory
     {
         $users = User::with('role')
-            ->select('name', 'email', 'nickname', 'role_id', 'surname')
+            ->select('id','name', 'email', 'nickname', 'role_id', 'surname')
             ->get();
-
         return inertia('Users', compact('users'));
+    }
+
+
+    /**
+     * @param User $user
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function userProfile(User $user)
+    {
+        return response()->json($user);
     }
 }

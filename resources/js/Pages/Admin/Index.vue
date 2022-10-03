@@ -1,6 +1,6 @@
 <template>
 <admin-layout>
-    qwe
+    Панель администратора
 </admin-layout>
 </template>
 
