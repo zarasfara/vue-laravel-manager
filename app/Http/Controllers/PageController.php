@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class PageController extends Controller
 {
@@ -44,10 +45,10 @@ class PageController extends Controller
 
     /**
      * @param User $user
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Inertia\Response
      */
     public function userProfile(User $user)
     {
-        return response()->json($user);
+        return Inertia::render('UserProfile', compact('user'));
     }
 }

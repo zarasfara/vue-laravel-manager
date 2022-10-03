@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <section class="main-block w-4/5 mr-2 bg-white rounded-md p-2 px-3 border border-gray-200">
+
             <div class="breadcrumb-container rounded mb-4">
                 <ol class="list-none flex">
                     <li class="text-slate-500 breadcrumb-item">
@@ -37,7 +37,7 @@
             </div>
             <hr>
             <div class="projects-list mt-4">
-                <div class="projects-item p-2 border-l-2 mt-8 border-gray-300 rounded-l">
+                <div class="projects-item p-2 mt-8">
                     <div class="projects-item__header flex justify-between">
                         <div class="w-2/5">
                             <p class="font-bold">Название задачи / <a class="text-emerald-500" href="#">Название
@@ -45,67 +45,65 @@
                             </p>
                             <div class="task-item__description mt-1.5 flex items-center text-sm">
                                 <p class="expiration-date">выполнить до: 20.08.2002</p>
-                                <p class="ml-3">Статус: Active</p>
+                                <p class="ml-3">Статус: <span class="bg-emerald-500 text-white rounded p-0.5 px-1">Активный</span></p>
                             </div>
                         </div>
-                        <div class="w-2/5">
+                        <div class="w-3/5">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex, excepturi
                             exercitationem, fugiat id molestiae nulla reiciendis sed soluta, tenetur vel vero
                             voluptas voluptates! Debitis error et maiores molestiae veniam.
                         </div>
                     </div>
-                    <div id="project-task" class="mt-3">
-                        <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer"
-                                @click="switcherActiveTask">Активные задачи -
-                            1
-                        </button>
-                        <div class="projects-tasks__list hidden scale-up-hor-left h-0">
-
-                            <div
-                                class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
-                                <div class="flex">
-                                    <form class="mr-2" action="">
-                                        <input id="default-checkbox" type="checkbox" value=""
-                                               class="w-4 h-4 rounded border-gray-300">
-                                    </form>
-                                    <p>Доделать задачу связаную с чем то</p>
-                                </div>
-                                <form id="task-change-status" action="">
-                                    <select id="underline_select"
-                                            class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                        <option selected>Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <div
-                                class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">
-                                <div class="flex">
-                                    <form class="mr-2" action="">
-                                        <input id="default-checkbox" type="checkbox" value=""
-                                               class="w-4 h-4 rounded border-gray-300">
-                                    </form>
-                                    <p>Доделать задачу связаную с чем то</p>
-                                </div>
-                                <form id="task-change-status" action="">
-                                    <select id="underline_select"
-                                            class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                        <option selected>Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div id="project-task" class="mt-3">-->
+<!--                        <button id="switcher-active-tasks" class="text-emerald-500 cursor-pointer"-->
+<!--                                @click="switcherActiveTask">Активные задачи - -->
+<!--                            1-->
+<!--                        </button>-->
+<!--                        <div class="projects-tasks__list hidden scale-up-ver-top h-0">-->
+<!--                            <div-->
+<!--                                class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">-->
+<!--                                <div class="flex">-->
+<!--                                    <form class="mr-2" action="">-->
+<!--                                        <input id="default-checkbox" type="checkbox" value=""-->
+<!--                                               class="w-4 h-4 rounded border-gray-300">-->
+<!--                                    </form>-->
+<!--                                    <p>Доделать задачу связаную с чем то</p>-->
+<!--                                </div>-->
+<!--                                <form id="task-change-status" action="">-->
+<!--                                    <select id="underline_select"-->
+<!--                                            class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">-->
+<!--                                        <option selected>Choose a country</option>-->
+<!--                                        <option value="US">United States</option>-->
+<!--                                        <option value="CA">Canada</option>-->
+<!--                                        <option value="FR">France</option>-->
+<!--                                        <option value="DE">Germany</option>-->
+<!--                                    </select>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                            <div-->
+<!--                                class="active-task mt-1 ml-1.5 p-1.5 rounded border border-dashed border-rose-300 flex items-center justify-between max-h-7">-->
+<!--                                <div class="flex">-->
+<!--                                    <form class="mr-2" action="">-->
+<!--                                        <input id="default-checkbox" type="checkbox" value=""-->
+<!--                                               class="w-4 h-4 rounded border-gray-300">-->
+<!--                                    </form>-->
+<!--                                    <p>Доделать задачу связанную с чем то</p>-->
+<!--                                </div>-->
+<!--                                <form id="task-change-status" action="">-->
+<!--                                    <select id="underline_select"-->
+<!--                                            class="cursor-pointer w-40 block py-2.5 px-0 w-100 text-sm text-black bg-transparent border-0 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">-->
+<!--                                        <option selected>Choose a country</option>-->
+<!--                                        <option value="US">United States</option>-->
+<!--                                        <option value="CA">Canada</option>-->
+<!--                                        <option value="FR">France</option>-->
+<!--                                        <option value="DE">Germany</option>-->
+<!--                                    </select>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
-        </section>
     </Layout>
 </template>
 

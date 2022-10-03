@@ -6,9 +6,10 @@
 
 import './bootstrap';
 
-import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/inertia-vue3'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import {createApp, h} from 'vue';
+import {createInertiaApp} from '@inertiajs/inertia-vue3';
+import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
+import 'material-design-icons-iconfont';
 
 const cleanApp = () => {
     document.getElementById('app').removeAttribute('data-page')
@@ -16,10 +17,10 @@ const cleanApp = () => {
 
 createInertiaApp({
     resolve: name => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+    setup({el, App, props, plugin}) {
+        createApp({render: () => h(App, props)})
             .use(plugin)
-            .mixin({methods:{route:window.route}})
+            .mixin({methods: {route: window.route}})
             .mount(el)
     },
 }).then(cleanApp)
