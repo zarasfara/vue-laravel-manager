@@ -10,6 +10,7 @@ import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/inertia-vue3';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import 'material-design-icons-iconfont';
+import { InertiaProgress } from '@inertiajs/progress'
 
 const cleanApp = () => {
     document.getElementById('app').removeAttribute('data-page')
@@ -24,5 +25,9 @@ createInertiaApp({
             .mount(el)
     },
 }).then(cleanApp)
+
+InertiaProgress.init({
+    color:'#34d399'
+})
 
 document.addEventListener('inertia:finish', cleanApp)

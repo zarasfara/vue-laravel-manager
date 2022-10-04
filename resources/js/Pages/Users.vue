@@ -18,8 +18,8 @@
                 <div class="user-card flex justify-between" :class="{'mt-4': index!== 0}" v-if="users.length !== 0"
                      v-for="(user,index) in users">
                     <div class="flex">
-                        <div class="rounded-lg overflow-hidden w-28 h-auto">
-                            <img src="/images/no-image.png" alt="">
+                        <div class="rounded-lg overflow-hidden w-28 h-fit">
+                            <img :src="user.avatar" alt="image">
                         </div>
                         <div class="user-data ml-2 inline-block">
                             <h3 class="user_name">{{ user.name }} {{ user.surname }}</h3>
@@ -32,8 +32,19 @@
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div id="user-more-btn" :data-id="user.id" @click="testFnc(user.id)" class="relative h-fit">
                         <i class="material-icons more_vert"></i>
+
+                        <div id="user-more-modal" class="absolute top-0 right-5 rounded bg-gray-50 px-2 border border-emerald-300">
+                            <ol>
+                                <li class="my-0.5">
+                                    action
+                                </li>
+                                <li>
+                                    action2
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
                 <div class="text-red-500" v-else>
@@ -53,6 +64,11 @@ export default {
     components: {
         Layout,
         Link,
+    },
+    methods: {
+        testFnc(userId) {
+            console.log(userId)
+        }
     },
     props: {
         users: Array,

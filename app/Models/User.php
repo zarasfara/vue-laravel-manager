@@ -69,6 +69,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Get route key
+     *
+     * @return string
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'nickname';
+    }
+
+    /**
      * Check if the user has a role
      *
      * @param $role

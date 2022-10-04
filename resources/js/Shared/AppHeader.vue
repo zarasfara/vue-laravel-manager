@@ -30,44 +30,44 @@
                      id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium desktop:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <Link :href="route('home')" :class="{'desktop:text-primary-700': $page.url==='/'}"
-                                  class="text-gray-400 block py-2 pr-4 pl-3 rounded desktop:bg-transparent lg:p-0 hover:text-primary-700">
+                            <Link :href="route('home')" :class="{'desktop:text-primary-500': $page.url==='/'}"
+                                  class="text-gray-400 block py-2 pr-4 pl-3 rounded desktop:bg-transparent lg:p-0 hover:text-primary-600">
                                 Главная
                             </Link>
                         </li>
                         <li>
                             <Link :href="route('projects')"
-                                  :class="{'text-primary-700': $page.component==='Projects'}"
-                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 desktop:hover:bg-transparent desktop:border-0 hover:text-primary-700 lg:p-0">
+                                  :class="{'desktop:text-primary-500': $page.component==='Projects'}"
+                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 desktop:hover:bg-transparent desktop:border-0 hover:text-primary-600 lg:p-0">
                                 Проекты
                             </Link>
                         </li>
                         <li>
-                            <Link :class="{'desktop:text-primary-700': $page.component==='Users'}"
-                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0"
+                            <Link :class="{'desktop:text-primary-500': $page.component==='Users'}"
+                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-600 lg:p-0"
                                   :href="route('users')">
                                 Пользователи
                             </Link>
                         </li>
 
                         <li>
-                            <Link :class="{'desktop:text-primary-700': $page.component==='UserProfile'}"
-                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-700 lg:p-0"
-                                  :href="route('user.profile', {user:user.id})">
+                            <Link :class="{'desktop:text-primary-500': $page.component==='DashBoard'}"
+                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-600 lg:p-0"
+                                  :href="route('dashboard')">
                                 Личный кабинет
                             </Link>
                         </li>
 
                         <li v-if="user && user.role_id === 1">
-                            <Link :class="{'desktop:text-primary-700': $page.url.startsWith('/admin')}"
+                            <Link :class="{'desktop:text-primary-500': $page.url.startsWith('/admin')}"
                                   :href="route('admin.home')"
-                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 desktop:hover:text-primary-700 lg:p-0">
+                                  class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 desktop:hover:text-primary-600 lg:p-0">
                                 Панель администратора
                             </Link>
                         </li>
                         <li v-if="user">
                             <Link method="get" as="button" type="button" :href="route('logout')"
-                                  class="block py-2 pr-4 pl-3 rounded bg-primary-700 desktop:bg-transparent text-gray-400 lg:p-0 desktop:hover:text-primary-700"
+                                  class="block py-2 pr-4 pl-3 rounded bg-primary-700 desktop:bg-transparent text-gray-400 lg:p-0 desktop:hover:text-primary-600"
                                   aria-current="page">Выход
                             </Link>
                         </li>
@@ -86,7 +86,7 @@ import {Link} from '@inertiajs/inertia-vue3'
 export default {
     name: "AppHeader",
     setup() {
-        const user = computed(() => usePage().props.value.user)
+        const user = computed(() => usePage().props.value.auth.user)
         return {user}
     },
     components: {

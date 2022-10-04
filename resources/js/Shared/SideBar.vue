@@ -1,9 +1,9 @@
 <template>
-    <aside class="md:w-auto sm:order-1 lg:w-1/4 sm:mt-3 md:mt-0">
+    <aside class="md:w-auto sm:order-1 desktop:w-1/4 sm:mt-3 md:mt-0">
         <div
             class="bg-white mb-3 rounded-md p-2 px-4 flex justify-center flex-col text-base border border-gray-200">
             <p>Привет, <span class="font-bold">{{ user ? user.name : 'anonymous' }}</span></p>
-            <div class="flex mt-3 w-80">
+            <div class="flex mt-3">
                 <p>Сессия: Не начата</p>
                 <form class="ml-2 flex items-center" action="">
                     <button type="submit" class="p-0.5 px-2 bg-emerald-400 text-white rounded">Начать</button>
@@ -13,10 +13,15 @@
         <div class="bg-white rounded-md p-2 pb-8 border border-gray-200">
             <div class="lg:flex ">
                 <form class="flex items-center sm:flex-wrap lg:flex-nowrap" action="">
-                    <input placeholder="Название задачи"
-                           class="rounded border border-gray-300 h-8 md:mr-3 placeholder:text-base sm:w-full md:w-auto" type="text">
-                    <button class="bg-emerald-400 rounded text-white p-1 px-2 h-8 focus:bg-emerald-500 md:w-auto sm:w-full md:mt-0 sm:mt-1"
-                            type="submit">
+                    <input id="user-name"
+                           class="font-sans block w-full py-1 px-3 ring-1 ring-slate-900/10 text-slate-500 rounded shadow-sm
+                               desktop:mr-2
+                               focus:ring-2 focus:ring-emerald-300"
+                           placeholder="Введите"
+                    />
+                    <button
+                        class="bg-emerald-400 rounded text-white p-1 px-2 focus:bg-emerald-500 md:w-auto sm:w-full md:mt-0 sm:mt-1"
+                        type="submit">
                         Поиск
                     </button>
                 </form>
@@ -53,7 +58,7 @@ import {usePage} from '@inertiajs/inertia-vue3'
 export default {
     name: "side-bar",
     setup() {
-        const user = computed(() => usePage().props.value.user)
+        const user = computed(() => usePage().props.value.auth.user)
         return {user}
     },
 }

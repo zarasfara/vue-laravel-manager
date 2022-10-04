@@ -17,6 +17,10 @@ body {
     font-family: Roboto-Regular, serif;
 }
 
+input {
+    outline: none;
+}
+
 .breadcrumb-item:last-child {
     color: rgb(0 0 0);
 }
@@ -69,11 +73,11 @@ body {
 @keyframes scale-up-ver-top {
     0% {
         transform: scaleY(0.4);
-        transform-origin: 100% 0%;
+        transform-origin: 100% 0;
     }
     100% {
         transform: scaleY(1);
-        transform-origin: 100% 0%;
+        transform-origin: 100% 0;
     }
 }
 

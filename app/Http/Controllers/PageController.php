@@ -11,24 +11,24 @@ class PageController extends Controller
     public function home()
     {
         Auth::loginUsingId(3);
-        return inertia('Index');
+        return Inertia::render('Index');
     }
 
     public function login()
     {
-        return inertia('Login');
+        return Inertia::render('Login');
     }
 
     public function logout()
     {
         Auth::logout();
 
-        return redirect()->route('logout');
+        return redirect()->route('login');
     }
 
     public function projects()
     {
-        return inertia('Projects');
+        return Inertia::render('Projects');
     }
 
     /**
@@ -37,9 +37,9 @@ class PageController extends Controller
     public function users(): \Inertia\Response|\Inertia\ResponseFactory
     {
         $users = User::with('role')
-            ->select('id','name', 'email', 'nickname', 'role_id', 'surname')
+            ->select('id', 'name', 'avatar', 'email', 'nickname', 'role_id', 'surname')
             ->get();
-        return inertia('Users', compact('users'));
+        return Inertia::render('Users', compact('users'));
     }
 
 
@@ -50,5 +50,10 @@ class PageController extends Controller
     public function userProfile(User $user)
     {
         return Inertia::render('UserProfile', compact('user'));
+    }
+
+    public function dashBoard()
+    {
+        return Inertia::render('DashBoard');
     }
 }
