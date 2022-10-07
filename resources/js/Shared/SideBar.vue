@@ -1,5 +1,5 @@
 <template>
-    <aside class="md:w-auto sm:order-1 desktop:w-1/4 sm:mt-3 md:mt-0">
+    <aside class="sm:order-1 desktop:w-1/4 md:w-1/3 sm:mt-3 md:mt-0 drop-shadow-md">
         <div
             class="bg-white mb-3 rounded-md p-2 px-4 flex justify-center flex-col text-base border border-gray-200">
             <p>Привет, <span class="font-bold">{{ user ? user.name : 'anonymous' }}</span></p>

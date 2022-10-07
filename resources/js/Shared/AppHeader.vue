@@ -1,7 +1,7 @@
 <template>
     <header>
-        <nav class="bg-white/70 border-gray-200 px-4 lg:px-6 sm:py-2.5 md:py-2.5">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl">
+        <nav class="border-gray-200 px-4 desktop:pt-3 lg:px-6 sm:py-2.5 md:py-2.5">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl relative">
                 <a href="https://flowbite.com" class="flex items-center">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
                     <span class="self-center text-xl font-semibold whitespace-nowrap">CRM</span>
@@ -9,7 +9,8 @@
                 <!--modal start-->
                 <div class="modal">
                     <button data-collapse-toggle="mobile-menu-2" type="button"
-                            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg desktop:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                            @click="showModal"
+                            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                             aria-controls="mobile-menu-2" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -26,9 +27,10 @@
                     </button>
                 </div>
                 <!--modal end-->
-                <div class="hidden justify-between items-center w-full desktop:flex desktop:w-auto lg:order-1"
-                     id="mobile-menu-2">
-                    <ul class="flex flex-col mt-4 font-medium desktop:flex-row lg:space-x-8 lg:mt-0">
+                <div
+                    class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1 sm:absolute sm:top-12 sm:z-10 sm:bg-white sm:rounded-lg sm:border sm:border-gray-100"
+                    id="mobile-menu-2">
+                    <ul class="flex flex-col sm:mt-4 font-medium lg:flex-row lg:space-x-8 sm:mt-0">
                         <li>
                             <Link :href="route('home')" :class="{'desktop:text-primary-500': $page.url==='/'}"
                                   class="text-gray-400 block py-2 pr-4 pl-3 rounded desktop:bg-transparent lg:p-0 hover:text-primary-600">
@@ -67,7 +69,7 @@
                         </li>
                         <li v-if="user">
                             <Link method="get" as="button" type="button" :href="route('logout')"
-                                  class="block py-2 pr-4 pl-3 rounded bg-primary-700 desktop:bg-transparent text-gray-400 lg:p-0 desktop:hover:text-primary-600"
+                                  class="block py-2 pr-4 pl-3 rounded desktop:bg-transparent text-gray-400 lg:p-0 desktop:hover:text-primary-600"
                                   aria-current="page">Выход
                             </Link>
                         </li>
@@ -91,6 +93,11 @@ export default {
     },
     components: {
         Link
+    },
+    methods: {
+        showModal() {
+            document.getElementById('mobile-menu-2').classList.toggle('hidden')
+        }
     }
 }
 

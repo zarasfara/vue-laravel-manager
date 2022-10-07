@@ -12,7 +12,7 @@
     ])
     @inertiaHead
 </head>
-<body>
+<body class="h-screen bg-neutral-50">
 @inertia
 </body>
 </html>

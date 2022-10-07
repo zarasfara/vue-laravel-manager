@@ -22,26 +22,24 @@ module.exports = {
                 }
             },
             screens: {
-                // 'lg': '1025px',
-                // 'md': '769px',
-                // 'mobile': {'min':'319px', 'max':'426px'},
-                // 'tablet': {'max':'769px'},
-                // 'min': '319px'
+                // Телефоны и планшеты
                 'sm': {'min': '319px', 'max': '768px'},
                 // => @media (min-width: 640px and max-width: 767px) { ... }
 
-                'md': {'min': '769px', 'max': '1024px'},
+                'md': {'min': '769px', 'max': '1025px'},
                 // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-                'lg': {'min': '1025px', 'max': '1280px'},
-                // => @media (min-width: 1024px and max-width: 1279px) { ... }
+                // Нотбуки и больше
+                'lg': {'min': '769px'},
+                // => @media (min-width: 1024px) { ... }
+
 
                 'xl': {'min': '1281px', 'max': '1536px'},
                 // => @media (min-width: 1280px and max-width: 1535px) { ... }
 
-                '2xl': {'min': '1537px'},
-                // => @media (min-width: 1536px) { ... }
+                //Все экраны
                 'desktop': {'min':'1025px'}
+                // => @media (min-width: 1536px) { ... }
             }
         },
     },
