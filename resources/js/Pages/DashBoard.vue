@@ -26,7 +26,8 @@
                     <label for="first_name" class="block mt-0 text-sm font-medium text-gray-900">Имя
                     </label>
                     <input type="text" id="first_name"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg leading-4
+                           focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            placeholder="John"
                            :value="user.name">
                 </div>
@@ -34,7 +35,8 @@
                     <label for="second_name" class="block mt-2 text-sm font-medium text-gray-900">Фамилия
                     </label>
                     <input type="text" id="first_name"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg leading-4
+                           focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            placeholder="John"
                            :value="user.surname">
                 </div>
@@ -42,7 +44,8 @@
                     <label for="second_name" class="block mt-2 text-sm font-medium text-gray-900 ">Ник
                     </label>
                     <input type="text" id="nickname"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg leading-4
+                           focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            placeholder="John"
                            :value="user.nickname">
                 </div>
@@ -50,7 +53,8 @@
                     <label for="email" class="block mt-2 text-sm font-medium text-gray-900 ">Почта
                     </label>
                     <input type="text" id="nickname"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg leading-4
+                            focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            placeholder="John"
                            :value="user.email">
                 </div>

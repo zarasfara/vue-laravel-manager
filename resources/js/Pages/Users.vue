@@ -26,9 +26,9 @@
                             <p class="user_email">Почта: <span class="text-emerald-500">{{ user.email }}</span></p>
                             <p class="user_role">Роль: {{ user.role.title }}</p>
                             <p>Профиль:
-                                <Link class="text-emerald-500" :href="route('user.profile',{user:user})">
+                                <span class="text-emerald-500">
                                     {{ user.nickname }}
-                                </Link>
+                                </span>
                             </p>
                         </div>
                     </div>

@@ -52,7 +52,7 @@
                             </Link>
                         </li>
 
-                        <li>
+                        <li v-if="user">
                             <Link :class="{'desktop:text-primary-500': $page.component==='DashBoard'}"
                                   class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 hover:text-primary-600 lg:p-0"
                                   :href="route('dashboard')">

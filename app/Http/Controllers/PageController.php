@@ -42,16 +42,11 @@ class PageController extends Controller
         return Inertia::render('Users', compact('users'));
     }
 
-
     /**
-     * @param User $user
+     * return DashBoard page
+     *
      * @return \Inertia\Response
      */
-    public function userProfile(User $user)
-    {
-        return Inertia::render('UserProfile', compact('user'));
-    }
-
     public function dashBoard()
     {
         return Inertia::render('DashBoard');

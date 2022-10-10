@@ -8,7 +8,8 @@
                     </label>
 
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        class=" rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+                            focus:ring-emerald-300 focus:border-emerald-300"
                         id="email" type="email" placeholder="email" v-model="form.email"
                         :class="hasError('email') ? 'border-red-500' : ''">
 
@@ -21,7 +22,8 @@
                     </label>
 
                     <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        class="rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none
+                            focus:shadow-outline focus:ring-emerald-300 focus:border-emerald-300"
                         placeholder="password"
                         id="password" type="password" v-model="form.password"
                         :class="hasError('password') ? 'border-red-500' : ''">
@@ -32,7 +34,7 @@
 
                 <div class="flex items-center justify-between">
                     <button
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="submit">
                         Войти
                     </button>

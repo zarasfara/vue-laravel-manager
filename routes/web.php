@@ -18,15 +18,17 @@ use App\Http\Controllers\Admin\PageController as AdminPageController;
 
 
 Route::controller(PageController::class)->group(function () {
-    Route::get('/', 'home')->name('home');
-    Route::get('/login', 'login')->name('login');
-    Route::get('/projects', 'projects')->name('projects');
-    Route::get('/users', 'users')->name('users');
-    Route::get('/profile/{user}', 'userProfile')->name('user.profile');
-    Route::get('/dashboard', 'dashBoard')->name('dashboard');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/', 'home')->name('home');
+        Route::get('/projects', 'projects')->name('projects');
+        Route::get('/users', 'users')->name('users');
+        Route::get('/dashboard', 'dashBoard')->name('dashboard');
+    });
+
+    Route::get('/login', [PageController::class, 'login'])->name('login');
+
 });
-
-
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');

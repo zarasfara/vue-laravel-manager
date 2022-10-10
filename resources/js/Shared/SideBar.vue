@@ -14,13 +14,13 @@
             <div class="lg:flex ">
                 <form class="flex items-center sm:flex-wrap lg:flex-nowrap" action="">
                     <input id="user-name"
-                           class="font-sans block w-full py-1 px-3 ring-1 ring-slate-900/10 text-slate-500 rounded shadow-sm
-                               desktop:mr-2
-                               focus:ring-2 focus:ring-emerald-300"
+                           class="font-sans block w-full leading-4 py-1 px-3 ring-1 ring-slate-900/10 text-slate-500
+                           rounded shadow-sm desktop:mr-2 focus:ring-2 focus:ring-emerald-300"
                            placeholder="Введите"
                     />
                     <button
-                        class="bg-emerald-400 rounded text-white p-1 px-2 focus:bg-emerald-500 md:w-auto sm:w-full md:mt-0 sm:mt-1"
+                        class="bg-emerald-400 rounded text-white p-1 px-2 focus:bg-emerald-500 md:w-auto
+                            sm:w-full md:mt-0 sm:mt-1"
                         type="submit">
                         Поиск
                     </button>
