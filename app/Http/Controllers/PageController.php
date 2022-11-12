@@ -49,6 +49,8 @@ class PageController extends Controller
      */
     public function dashBoard()
     {
-        return Inertia::render('DashBoard');
+        $user = Auth::user();
+        $user['avatar'] = asset('storage/' . $user->avatar);
+        return Inertia::render('DashBoard', compact('user'));
     }
 }

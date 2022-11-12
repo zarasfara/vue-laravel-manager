@@ -1,19 +1,19 @@
 {
-  "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot": {
-    "file": "assets/MaterialIcons-Regular.e69d687a.eot",
-    "src": "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot"
+  "public/fonts/Roboto-Medium.ttf": {
+    "file": "assets/Roboto-Medium.9d0d55a3.ttf",
+    "src": "public/fonts/Roboto-Medium.ttf"
   },
   "public/fonts/Roboto-Regular.ttf": {
     "file": "assets/Roboto-Regular.4e147ab6.ttf",
     "src": "public/fonts/Roboto-Regular.ttf"
   },
-  "public/fonts/Roboto-Medium.ttf": {
-    "file": "assets/Roboto-Medium.9d0d55a3.ttf",
-    "src": "public/fonts/Roboto-Medium.ttf"
-  },
   "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff2": {
     "file": "assets/MaterialIcons-Regular.5743ed3d.woff2",
     "src": "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff2"
+  },
+  "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot": {
+    "file": "assets/MaterialIcons-Regular.e69d687a.eot",
+    "src": "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot"
   },
   "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff": {
     "file": "assets/MaterialIcons-Regular.11ec382a.woff",
@@ -24,11 +24,10 @@
     "src": "node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.ttf"
   },
   "resources/js/app.js": {
-    "file": "assets/app.261a54f7.js",
+    "file": "assets/app.0f5fa508.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
-      "resources/js/Pages/Admin/Index.vue",
       "resources/js/Pages/DashBoard.vue",
       "resources/js/Pages/Index.vue",
       "resources/js/Pages/Login.vue",
@@ -50,58 +49,38 @@
     "src": "resources/js/index.js",
     "isEntry": true
   },
-  "resources/js/Pages/Admin/Index.vue": {
-    "file": "assets/Index.ddf33ccc.js",
-    "src": "resources/js/Pages/Admin/Index.vue",
+  "resources/js/Pages/DashBoard.vue": {
+    "file": "assets/DashBoard.2c19601c.js",
+    "src": "resources/js/Pages/DashBoard.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_AppHeader.a9e93de0.js",
-      "__plugin-vue_export-helper.cdc0426e.js",
-      "resources/js/app.js"
+      "_Layout.02e16eaa.js",
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ]
+  },
+  "_Layout.02e16eaa.js": {
+    "file": "assets/Layout.02e16eaa.js",
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
     ]
   },
   "__plugin-vue_export-helper.cdc0426e.js": {
     "file": "assets/_plugin-vue_export-helper.cdc0426e.js"
   },
-  "_AppHeader.a9e93de0.js": {
-    "file": "assets/AppHeader.a9e93de0.js",
-    "imports": [
-      "resources/js/app.js",
-      "__plugin-vue_export-helper.cdc0426e.js"
-    ]
-  },
-  "resources/js/Pages/DashBoard.vue": {
-    "file": "assets/DashBoard.f81ec784.js",
-    "src": "resources/js/Pages/DashBoard.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_Layout.bc4a3663.js",
-      "resources/js/app.js",
-      "__plugin-vue_export-helper.cdc0426e.js",
-      "_AppHeader.a9e93de0.js"
-    ]
-  },
-  "_Layout.bc4a3663.js": {
-    "file": "assets/Layout.bc4a3663.js",
-    "imports": [
-      "_AppHeader.a9e93de0.js",
-      "resources/js/app.js",
-      "__plugin-vue_export-helper.cdc0426e.js"
-    ]
-  },
   "resources/js/Pages/Index.vue": {
-    "file": "assets/Index.80e2ad40.js",
+    "file": "assets/Index.2619fe61.js",
     "src": "resources/js/Pages/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.bc4a3663.js",
+      "_Layout.02e16eaa.js",
       "__plugin-vue_export-helper.cdc0426e.js",
-      "resources/js/app.js",
-      "_AppHeader.a9e93de0.js"
+      "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Login.vue": {
-    "file": "assets/Login.98fbfc59.js",
+    "file": "assets/Login.87920b90.js",
     "src": "resources/js/Pages/Login.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -110,29 +89,27 @@
     ]
   },
   "resources/js/Pages/Projects.vue": {
-    "file": "assets/Projects.2d2f3f54.js",
+    "file": "assets/Projects.553ce5dc.js",
     "src": "resources/js/Pages/Projects.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.bc4a3663.js",
+      "_Layout.02e16eaa.js",
       "__plugin-vue_export-helper.cdc0426e.js",
-      "resources/js/app.js",
-      "_AppHeader.a9e93de0.js"
+      "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Users.vue": {
-    "file": "assets/Users.1a8262d8.js",
+    "file": "assets/Users.46b17ef8.js",
     "src": "resources/js/Pages/Users.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout.bc4a3663.js",
+      "_Layout.02e16eaa.js",
       "resources/js/app.js",
-      "__plugin-vue_export-helper.cdc0426e.js",
-      "_AppHeader.a9e93de0.js"
+      "__plugin-vue_export-helper.cdc0426e.js"
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app.a3dda7f1.css",
+    "file": "assets/app.32516072.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },

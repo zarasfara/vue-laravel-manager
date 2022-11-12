@@ -6,9 +6,9 @@
 
 import './bootstrap';
 
-import {createApp, h} from 'vue';
-import {createInertiaApp} from '@inertiajs/inertia-vue3';
-import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import 'material-design-icons-iconfont';
 import { InertiaProgress } from '@inertiajs/progress'
 
@@ -16,18 +16,19 @@ const cleanApp = () => {
     document.getElementById('app').removeAttribute('data-page')
 }
 
-createInertiaApp({
-    resolve: name => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({el, App, props, plugin}) {
-        createApp({render: () => h(App, props)})
-            .use(plugin)
-            .mixin({methods: {route: window.route}})
-            .mount(el)
-    },
-}).then(cleanApp)
+document.addEventListener('inertia:finish', cleanApp)
 
-InertiaProgress.init({
-    color:'#34d399'
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    setup({ el, app, props, plugin }) {
+        return createApp({ render: () => h(app, props) })
+            .use(plugin)
+            .mixin({ methods: { route } })
+            .mount(el);
+    },
 })
 
-document.addEventListener('inertia:finish', cleanApp)
+InertiaProgress.init({
+    color: '#34d399'
+})

@@ -77,7 +77,6 @@ export default {
         }
     }
 
-    //TODO Оптимизировать код в компоненте
 }
 </script>
 
