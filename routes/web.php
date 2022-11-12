@@ -33,7 +33,7 @@ Route::controller(PageController::class)->group(function () {
 Route::controller(LoginController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::post('/login', 'login')->name('login.send');
-    Route::patch('/update-user', 'updateUser')->name('update-user');
+    Route::put('/update-user', 'updateUser')->name('update-user');
 });
 
 Route::group(['middleware' => ['access:admin', 'auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {

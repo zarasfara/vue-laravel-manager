@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <form @submit.prevent="form.patch(route('update-user'))"
+        <form @submit.prevent="profileForm.put('update-user')"
               class="flex justify-around">
             <div class="overflow-hidden w-fit">
                 <img id="uploadedImage" v-if="status" class="rounded-full w-36" :src="user.avatar" alt="user_image">
@@ -19,52 +19,52 @@
                     <input type="text" id="first_name"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
                                focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
-                           v-model="form.name"
+                           v-model="profileForm.name"
                     >
-                    <div v-if="errors.name">{{ $page.props.errors.name }}</div>
+                    <div v-if="errors.name">{{ errors.name }}</div>
 
                     <label for="second_name" class="block text-sm font-medium text-gray-900">Фамилия </label>
                     <input type="text" id="first_name"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
-                               focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
-                           v-model="form.surname"
+                                  focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           v-model="profileForm.surname"
                     >
-                    <div v-if="errors.name">{{ errors.surname }}</div>
+                    <div v-if="errors.surname">{{ errors.surname }}</div>
                 </div>
                 <div class="w-2/4 px-1.5">
                     <label for="second_name" class="block text-sm font-medium text-gray-900 ">Ник </label>
                     <input type="text" id="nickname"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
-                               focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
-                           v-model="form.nickname"
+                                               focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           v-model="profileForm.nickname"
                     >
                     <div v-if="errors.name">{{ errors.nickname }}</div>
 
                     <label for="email" class="block text-sm font-medium text-gray-900 ">Почта </label>
                     <input type="text" id="nickname"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
-                                focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
-                           v-model="form.email"
+                                                focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
+                           v-model="profileForm.email"
                     >
                     <div v-if="errors.name">{{ errors.email }}</div>
                 </div>
                 <div class="flex px-1.5">
                     <label for="upload-image" class="block w-full text-sm text-white
-                                  cursor-pointer py-2 px-4 mt-2
-                                  rounded border-0
-                                  text-center
-                                  text-sm font-semibold
-                                  bg-emerald-400 hover:bg-emerald-500 mr-2">
+                                                  cursor-pointer py-2 px-4 mt-2
+                                                  rounded border-0
+                                                  text-center
+                                                  text-sm font-semibold
+                                                  bg-emerald-400 hover:bg-emerald-500 mr-2">
                         Изображение
                     </label>
-                    <input id="upload-image" type="file" @input="form.avatar = $event.target.files[0]"
+                    <input id="upload-image" type="file" @input="profileForm.avatar = $event.target.files[0]"
                            @change="previewImageUpload"
                            class="hidden"
                     />
                     <div v-if="errors.name">{{ errors.avatar }}</div>
                     <button class="block w-full text-sm text-white cursor-pointer py-2 px-4 mt-2 rounded border-0
                                 text-center text-sm font-semibold bg-emerald-400 hover:bg-emerald-500"
-                            :disabled="form.processing" type="submit">Подтвердить
+                            :disabled="profileForm.processing" type="submit">Подтвердить
                     </button>
                 </div>
             </div>
@@ -85,12 +85,13 @@ export default {
     },
     props: [
         'errors',
+        'user'
     ],
     components: {
         Layout
     },
     setup(props) {
-        const form = useForm({
+        const profileForm = useForm({
             nickname: props.user.nickname,
             surname: props.user.surname,
             name: props.user.name,
@@ -98,7 +99,7 @@ export default {
             avatar: null,
         })
 
-        return { form }
+        return { profileForm }
     },
     methods: {
         previewImageUpload(event) {

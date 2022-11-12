@@ -6,10 +6,10 @@
 
 import './bootstrap';
 
+import 'material-design-icons-iconfont';
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import 'material-design-icons-iconfont';
 import { InertiaProgress } from '@inertiajs/progress'
 
 const cleanApp = () => {
@@ -27,7 +27,7 @@ createInertiaApp({
             .mixin({ methods: { route } })
             .mount(el);
     },
-})
+});
 
 InertiaProgress.init({
     color: '#34d399'

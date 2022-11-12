@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\UpdateUserInfoRequest;
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
 {
@@ -19,10 +17,10 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return response()->json(Auth::user());
-        }
 
-        return response(false, Response::HTTP_UNAUTHORIZED);
+            return redirect()->route('dashboard');
+        }
+        return back();
     }
 
     /**
