@@ -21,9 +21,9 @@
                                focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            v-model="profileForm.name"
                     >
-                    <div v-if="errors.name">{{ errors.name }}</div>
+                    <div class="text-red-500 text-sm text-sm" v-if="errors.name">{{ errors.name }}</div>
 
-                    <label for="second_name" class="block text-sm font-medium text-gray-900">Фамилия </label>
+                    <label for="second_name" class="block text-sm font-medium text-gray-900 mt-2">Фамилия</label>
                     <input type="text" id="first_name"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
                                   focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
@@ -38,15 +38,15 @@
                                                focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            v-model="profileForm.nickname"
                     >
-                    <div v-if="errors.name">{{ errors.nickname }}</div>
+                    <div class="text-red-500 text-sm" v-if="errors.name">{{ errors.nickname }}</div>
 
-                    <label for="email" class="block text-sm font-medium text-gray-900 ">Почта </label>
+                    <label for="email" class="block text-sm font-medium text-gray-900 mt-2">Почта </label>
                     <input type="text" id="nickname"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded leading-4
                                                 focus:ring-emerald-300 focus:border-emerald-300 block w-full p-2.5"
                            v-model="profileForm.email"
                     >
-                    <div v-if="errors.name">{{ errors.email }}</div>
+                    <div class="text-red-500 text-sm" v-if="errors.name">{{ errors.email }}</div>
                 </div>
                 <div class="flex px-1.5">
                     <label for="upload-image" class="block w-full text-sm text-white
