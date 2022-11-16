@@ -58,7 +58,7 @@
                             </Link>
                         </li>
 
-                        <li v-if="user && user.role_id === 1">
+                        <li v-if="user && can.see">
                             <Link :class="{ 'desktop:text-primary-500': $page.url.startsWith('/admin') }"
                                 :href="route('admin.home')"
                                 class="block py-2 pr-4 pl-3 text-gray-400 border-gray-100 lg:hover:bg-transparent lg:border-0 desktop:hover:text-primary-600 lg:p-0">
@@ -87,7 +87,8 @@ export default {
     name: "AppHeader",
     setup() {
         const user = computed(() => usePage().props.value.auth.user)
-        return { user }
+        const can = computed(() => usePage().props.value.auth.can)
+        return { user, can }
     },
     components: {
         Link

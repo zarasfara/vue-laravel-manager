@@ -6,8 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * App\Models\User
@@ -19,12 +20,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $email
  * @property int $role_id
  * @property string $password
- * @property \Illuminate\Support\Carbon $created_at
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -37,7 +38,6 @@ class User extends Authenticatable
         'email',
         'nickname',
         'avatar',
-        'role_id',
         'password',
     ];
 
@@ -61,14 +61,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return BelongsTo
-     */
-    public function role(): BelongsTo
-    {
-        return $this->belongsTo(Role::class,'role_id','id');
-    }
-
-    /**
      * Get route key
      *
      * @return string
@@ -78,14 +70,4 @@ class User extends Authenticatable
         return 'nickname';
     }
 
-    /**
-     * Check if the user has a role
-     *
-     * @param $role
-     * @return bool
-     */
-    public function hasRole($role): bool
-    {
-        return $this->role->title === $role;
-    }
 }
