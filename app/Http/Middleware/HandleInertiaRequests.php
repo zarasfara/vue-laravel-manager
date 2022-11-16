@@ -43,6 +43,9 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user() ?
                     $request->user()->only('id', 'nickname', 'name', 'second_name', 'role_id', 'avatar', 'nickname')
                     : null,
+                'can' => [
+                    'see' => Auth::check() ? Auth::user()->can('user.see') : null,
+                ]
             ]
         ]);
     }

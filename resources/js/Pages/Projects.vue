@@ -18,7 +18,7 @@
             <div class="project-list py-4 bg-white">
                 <div class="project-item flex flex-col justify-between my-4">
                     <div class="project-item__heading">
-                        <h2 class="text-lg text-emerald-500 cursor-pointer">Название проекта</h2>
+                        <h2 class="text-lg text-emerald-500 cursor-pointer w-fit">Название проекта</h2>
                     </div>
                     <div class="project-item__text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
@@ -44,7 +44,7 @@
                 <hr>
                 <div class="project-item flex flex-col justify-between my-4">
                     <div class="project-item__heading">
-                        <h2 class="text-lg text-emerald-500 cursor-pointer">Название проекта</h2>
+                        <h2 class="text-lg text-emerald-500 cursor-pointer w-fit">Название проекта</h2>
                     </div>
                     <div class="project-item__text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
@@ -70,7 +70,7 @@
                 <hr>
                 <div class="project-item flex flex-col justify-between my-4">
                     <div class="project-item__heading">
-                        <h2 class="text-lg text-emerald-500 cursor-pointer">Название проекта</h2>
+                        <h2 class="text-lg text-emerald-500 cursor-pointer w-fit">Название проекта</h2>
                     </div>
                     <div class="project-item__text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
@@ -95,7 +95,7 @@
                 </div>
                 <div class="project-item flex flex-col justify-between my-4">
                     <div class="project-item__heading">
-                        <h2 class="text-lg text-emerald-500 cursor-pointer">Название проекта</h2>
+                        <h2 class="text-lg text-emerald-500 cursor-pointer w-fit">Название проекта</h2>
                     </div>
                     <div class="project-item__text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has

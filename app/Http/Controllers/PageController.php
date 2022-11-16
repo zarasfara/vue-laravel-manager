@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Inertia\ResponseFactory;
 
 class PageController extends Controller
 {
     public function home()
     {
-        Auth::loginUsingId(3);
         return Inertia::render('Index');
     }
 
@@ -32,12 +32,12 @@ class PageController extends Controller
     }
 
     /**
-     * @return \Inertia\Response|\Inertia\ResponseFactory
+     * @return \Inertia\Response|ResponseFactory
      */
-    public function users(): \Inertia\Response|\Inertia\ResponseFactory
+    public function users(): \Inertia\Response|ResponseFactory
     {
-        $users = User::with('role')
-            ->select('id', 'name', 'avatar', 'email', 'nickname', 'role_id', 'surname')
+        $users = User::with('roles')
+            ->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')
             ->get();
         return Inertia::render('Users', compact('users'));
     }
