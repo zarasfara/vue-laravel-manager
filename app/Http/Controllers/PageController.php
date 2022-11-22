@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -36,9 +37,12 @@ class PageController extends Controller
      */
     public function users(): \Inertia\Response|ResponseFactory
     {
-        $users = User::with('roles')
-            ->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')
-            ->get();
+//        $users = User::with('roles')
+//            ->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')
+//            ->get();
+
+        $users = UserResource::collection(User::query()->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')->get());
+//        dd($users);
         return Inertia::render('Users', compact('users'));
     }
 
