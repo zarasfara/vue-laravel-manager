@@ -21,6 +21,7 @@ class UserResource extends JsonResource
             'nickname' => $this->nickname,
             'avatar' => asset('storage/'. $this->avatar),
             'email' => $this->email,
+            'role_name' => $this->roles[0]->alias_name,
 //            'notifications_count' => $this->notifications_count,
 //            'read_notifications_count' => $this->read_notifications_count,
 //            'unread_notifications_count' => $this->unread_notifications_count,

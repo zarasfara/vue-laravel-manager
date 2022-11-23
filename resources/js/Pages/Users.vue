@@ -24,7 +24,7 @@
                         <div class="user-data ml-2 inline-block">
                             <h3 class="user_name">{{ user.name }} {{ user.surname }}</h3>
                             <p class="user_email">Почта: <span class="text-emerald-500">{{ user.email }}</span></p>
-<!--                            <p class="user_role">Роль: {{ user.roles[0].alias_name }}</p>-->
+                            <p class="user_role">Роль: {{ user.role_name }}</p>
                             <p>Профиль:
                                 <span class="text-emerald-500">
                                     {{ user.nickname }}
@@ -65,6 +65,11 @@ export default {
     components: {
         Layout,
         Link,
+    },
+    mounted() {
+        this.users.forEach(u => {
+            console.log(u)
+        })
     },
     methods: {
         testFnc(userId) {

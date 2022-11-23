@@ -2,8 +2,8 @@
     <Layout>
         <form @submit.prevent="form.post(route('update-user'))"
               class="flex justify-around">
-            <div class="overflow-hidden w-fit">
-                <img id="uploadedImage" v-if="status" class="rounded-full w-36" :src="user.avatar" alt="user_image">
+            <div class="w-44">
+                <img id="uploadedImage" v-if="status" class="rounded h-auto max-w-full" :src="user.avatar" alt="user_image">
                 <div v-else
                      class="flex justify-center items-center animate-pulse w-36 h-36 bg-gray-300 rounded-full sm:w-96">
                     <svg class="w-12 h-12 text-gray-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"

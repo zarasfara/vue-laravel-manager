@@ -37,12 +37,7 @@ class PageController extends Controller
      */
     public function users(): \Inertia\Response|ResponseFactory
     {
-//        $users = User::with('roles')
-//            ->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')
-//            ->get();
-
-        $users = UserResource::collection(User::query()->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')->get());
-//        dd($users);
+        $users = UserResource::collection(User::with('roles')->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')->get());
         return Inertia::render('Users', compact('users'));
     }
 
