@@ -51,14 +51,11 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-
             'email.required' => ':attribute обязательна',
             'email.email' => ':attribute некорректная',
             'email.exists' => 'Такой почты не существует',
-
             'password.min' => ':attribute должен быть минимум 6 символов',
             'password.required' => ':attribute обязателен',
-
         ];
     }
 }

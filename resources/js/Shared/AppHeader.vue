@@ -66,7 +66,7 @@
                             </Link>
                         </li>
                         <li v-if="user">
-                            <Link method="get" as="button" type="button" :href="route('logout')"
+                            <Link method="get" type="button" :href="route('logout')"
                                 class="block py-2 pr-4 pl-3 rounded desktop:bg-transparent text-gray-400 lg:p-0 desktop:hover:text-primary-600"
                                 aria-current="page">Выход
                             </Link>

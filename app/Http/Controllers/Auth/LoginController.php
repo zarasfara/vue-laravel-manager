@@ -39,15 +39,15 @@ class LoginController extends Controller
     {
         $user = Auth::user();
 
-        $data = $request->validated();
-        $data['avatar'] = $user->avatar;
+        $validatedData = $request->validated();
+        $validatedData['avatar'] = $user->avatar;
 
         if ($request->hasFile('avatar')) {
             Storage::disk('public')->delete($user->avatar);
             $imagePath = $request->file('avatar')->store('profile-photos', 'public');
-            $data['avatar'] = $imagePath;
+            $validatedData['avatar'] = $imagePath;
         }
 
-        $user->update($data);
+        $user->update($validatedData);
     }
 }

@@ -26,7 +26,7 @@ Route::controller(PageController::class)->group(function () {
         Route::get('/dashboard', 'dashBoard')->name('dashboard');
     });
 
-    Route::get('/login', [PageController::class, 'login'])->name('login');
+    Route::get('/login', 'login')->name('login');
 
 });
 

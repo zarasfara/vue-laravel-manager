@@ -20,13 +20,6 @@ class PageController extends Controller
         return Inertia::render('Login');
     }
 
-    public function logout()
-    {
-        Auth::logout();
-
-        return redirect()->route('login');
-    }
-
     public function projects()
     {
         return Inertia::render('Projects');
@@ -35,9 +28,12 @@ class PageController extends Controller
     /**
      * @return \Inertia\Response|ResponseFactory
      */
-    public function users(): \Inertia\Response|ResponseFactory
+    public function users()
     {
-        $users = UserResource::collection(User::with('roles')->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')->get());
+        $users = UserResource::collection(User::with('roles')
+            ->select('id', 'name', 'avatar', 'email', 'nickname', 'surname')
+            ->get());
+
         return Inertia::render('Users', compact('users'));
     }
 
